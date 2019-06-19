@@ -12,7 +12,7 @@ have still worked the same. The choice of @Controller  is, however, more descrip
 of this component’s role in the application.
 The home()  method is as simple as controlle
 //@Component 
- 实测 替换后会异常。
+ 实测 替换后会异常。 
 */public class HomeController {
 
   @GetMapping("/")     // <2>
