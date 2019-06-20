@@ -14,7 +14,6 @@ public class Order {
 
   //end::allButValidation[]
   @NotBlank(message="Name is required")
-  //tag::allButValidation[]
   private String name;
   //end::allButValidation[]
 
@@ -40,12 +39,11 @@ public class Order {
 
   @CreditCardNumber(message="Not a valid credit card number")
   //tag::allButValidation[]
-  private String ccNumber;
+  private String ccNumber="ddddd";
   //end::allButValidation[]
 
   @Pattern(regexp="^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
            message="Must be formatted MM/YY")
-  //tag::allButValidation[]
   private String ccExpiration;
   //end::allButValidation[]
 

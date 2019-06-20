@@ -22,7 +22,7 @@ import tacos.Taco;
 
 @Slf4j
 @Controller
-@RequestMapping("/design")
+@RequestMapping("/design")  //design.html中的form未指定提交的路径，则提交到当前路径 
 public class DesignTacoController {
 
 //end::head[]
@@ -52,7 +52,7 @@ public void addIngredientsToModel(Model model) {
 //tag::showDesignForm[]
   @GetMapping
   public String showDesignForm(Model model) {
-    model.addAttribute("design", new Taco());
+    model.addAttribute("design33", new Taco());
     return "design";
   }
 
@@ -74,14 +74,14 @@ public void addIngredientsToModel(Model model) {
 
 //tag::processDesignValidated[]
   @PostMapping
-  public String processDesign(@Valid @ModelAttribute("design") Taco design, Errors errors, Model model) {
+  public String processDesign(@Valid Taco design2, Errors errors, Model model) {
     if (errors.hasErrors()) {
       return "design";
     }
 
     // Save the taco design...
     // We'll do this in chapter 3
-    log.info("Processing design: " + design);
+    log.info("Processing design: " + design2);
 
     return "redirect:/orders/current";
   }
